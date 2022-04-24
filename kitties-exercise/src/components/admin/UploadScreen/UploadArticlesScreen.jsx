@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { axiosMainUser } from '../../../constants/urls';
+import './style.css';
 
-export const UploadArticlesScreen = () => {
+export const UploadArticleScreen = () => {
   const [file, setFile] = useState(null);
   const [fileUploaded, setFileUploaded] = useState(false);
 
@@ -26,34 +27,30 @@ export const UploadArticlesScreen = () => {
     console.log(file.name);
   };
   return (
-    <form>
-      <div style={{ display: 'flex', height: 48, alignItems: 'center' }}>
-        <h1 style={{ marginRight: 32 }}>Create new article</h1>
-        <button
-          type="submit"
-          style={{ backgroundColor: '#007BFF' }}
-          onClick={() => uploadFile()}
-        >
+    <form className="form-container">
+      <div className="title-container">
+        <h1>Create new article</h1>
+        <button type="submit" onClick={() => uploadFile()}>
           Publish article
         </button>
       </div>
 
-      <label>
+      {/* first input - Article title */}
+      <label className="main-label">
         Article Title
-        <input type="text" name="name" placeholder="My First Article" />
+        <input
+          className="margin-top"
+          type="text"
+          name="name"
+          placeholder="My First Article"
+        />
       </label>
       <br />
 
-      <label htmlFor="filePicker">
+      {/* second input - Upload file/image */}
+      <label htmlFor="filePicker" className="main-label file-picker">
         Featured image
-        <div
-          style={{
-            backgroundColor: '#6C757D',
-            width: 147,
-            height: 36,
-            borderRadius: 3,
-          }}
-        >
+        <div className="upload-btn margin-top">
           <label htmlFor="filePicker">
             Upload an image
             <input
@@ -64,13 +61,24 @@ export const UploadArticlesScreen = () => {
             />{' '}
           </label>
         </div>
-        {fileUploaded ? <span>Image: {file.name}</span> : <></>}
+        {/* display name of choosen file */}
+        {fileUploaded ? (
+          <div style={{ padding: 8 }}>Image: {file.name}</div>
+        ) : (
+          <></>
+        )}
       </label>
       <br />
 
-      <label>
+      {/* third input - Article content */}
+      <label className="main-label">
         Content
-        <input type="text" name="name" placeholder="Supports markdown. Yay!" />
+        <textarea
+          className="content-container margin-top"
+          type="text"
+          name="name"
+          placeholder="Supports markdown. Yay!"
+        />
       </label>
     </form>
   );
