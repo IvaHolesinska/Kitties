@@ -1,0 +1,54 @@
+.form-container {
+  margin: 30px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.title-container h1 {
+  margin-right: 30px;
+}
+
+.title-container button {
+  background-color: #007bff;
+}
+
+/* labels for input */
+.main-label {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.file-picker {
+  width: 147px;
+}
+
+.upload-btn {
+  background-color: #6c757d;
+  height: 20px;
+  font-weight: normal;
+  text-align: center;
+  width: 140px;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  justify-content: flex-end;
+  text-align: start;
+}
+
+.margin-top {
+  margin-top: 8px;
+}
