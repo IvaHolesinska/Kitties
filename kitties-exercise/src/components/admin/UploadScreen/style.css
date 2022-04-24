@@ -16,6 +16,9 @@
 
 .title-container button {
   background-color: #007bff;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 6px 12px;
 }
 
 /* labels for input */
@@ -33,12 +36,13 @@
 
 .upload-btn {
   background-color: #6c757d;
-  height: 20px;
+  height: 25px;
   font-weight: normal;
   text-align: center;
   width: 140px;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 3px;
+  color: #ffffff;
 }
 
 .content-container {
