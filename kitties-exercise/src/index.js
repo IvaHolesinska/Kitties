@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ApiCalls } from './constants/apiCalls';
 import { UploadArticleScreen } from './components/admin/UploadScreen/UploadArticlesScreen';
 import { Header } from './components/shared/Header';
+import { ListOfArticlesScreen } from './components/user/ListOfArticlesScreen/ListOfArticlesScreen';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -15,7 +16,8 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<UploadArticleScreen />} />
+        <Route path="/" element={<ListOfArticlesScreen />} />
+        {/* <Route path="/" element={<UploadArticleScreen />} /> */}
       </Routes>
     </BrowserRouter>
   );
