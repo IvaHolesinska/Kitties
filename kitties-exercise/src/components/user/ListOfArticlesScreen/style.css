@@ -1,0 +1,14 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.text-container {
+  flex-direction: column;
+}
+
+.image {
+  width: 272px;
+  height: 244px;
+}
