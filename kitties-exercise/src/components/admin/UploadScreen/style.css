@@ -1,8 +1,10 @@
+/* styles for main container */
 .form-container {
   margin: 30px;
-  min-width: 350px;
+  min-width: 320px;
 }
 
+/* styles for main title and submit button*/
 .title-container {
   display: flex;
   flex-direction: row;
@@ -22,7 +24,7 @@
   padding: 6px 12px;
 }
 
-/* labels for input */
+/* labels and margin for input */
 .main-label {
   display: flex;
   flex-direction: column;
@@ -31,6 +33,11 @@
   padding-bottom: 8px;
 }
 
+.margin-top {
+  margin-top: 8px;
+}
+
+/* second input - Upload file/image */
 .file-picker {
   width: 147px;
 }
@@ -46,14 +53,11 @@
   color: #ffffff;
 }
 
+/* third input - Article content */
 .content-container {
   display: flex;
   flex-direction: column;
   min-height: 300px;
   justify-content: flex-end;
   text-align: start;
-}
-
-.margin-top {
-  margin-top: 8px;
 }

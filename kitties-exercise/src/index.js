@@ -9,6 +9,7 @@ import { ListOfArticlesScreen } from './components/user/ListOfArticlesScreen/Lis
 const container = document.getElementById('root');
 const root = createRoot(container);
 
+// TODO: add more screens
 const App = () => {
   // get apiKey & access token
   ApiCalls();

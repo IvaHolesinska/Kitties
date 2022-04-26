@@ -1,7 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
+/* styles for main content */
 .main-content {
   height: 56px;
   padding: 4px 30px;
@@ -12,17 +9,19 @@
 .topnav {
   overflow: hidden;
 }
+
 .grey {
   color: #6c757d;
 }
 
+/* position for "Log in" */
 .topnav-right {
   position: absolute;
   right: 20px;
   top: 12px;
 }
 
-/* Style the links inside the navigation bar */
+/* style links inside the navigation bar */
 .topnav a {
   text-align: center;
   text-decoration: none;
@@ -32,12 +31,12 @@
   line-height: 55px;
 }
 
-/* Change color of links on hover */
+/* change color of links on hover */
 .topnav a:hover {
   color: black;
 }
 
-/* Add a color to the active/current link */
+/* add color to the active/current link */
 .topnav a.active {
   color: #373c41;
 }

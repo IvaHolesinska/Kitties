@@ -6,6 +6,7 @@ export const UploadArticleScreen = () => {
   const [file, setFile] = useState(null);
   const [fileUploaded, setFileUploaded] = useState(false);
 
+  // TODO: Edit api calls and connect to endpoints
   // upload file/image
   const uploadFile = async () => {
     const url = '/images';
@@ -26,6 +27,7 @@ export const UploadArticleScreen = () => {
     setFileUploaded(true);
     console.log(file.name);
   };
+
   return (
     <form className="form-container">
       <div className="title-container">
@@ -70,6 +72,7 @@ export const UploadArticleScreen = () => {
       </label>
       <br />
 
+      {/* TODO: Add markdown */}
       {/* third input - Article content */}
       <label className="main-label">
         Content

@@ -1,8 +1,17 @@
+// TODO: remove after connect with API
 import cat1 from '../components/images/cat1.svg';
 import cat2 from '../components/images/cat2.svg';
 import cat3 from '../components/images/cat3.svg';
 import cat4 from '../components/images/cat4.svg';
 import cat5 from '../components/images/cat5.svg';
+
+export const mockImages = [
+  { imageId: '1', img: cat1 },
+  { imageId: '2', img: cat2 },
+  { imageId: '3', img: cat3 },
+  { imageId: '4', img: cat4 },
+  { imageId: '5', img: cat5 },
+];
 
 export const mockArticles = [
   {
@@ -45,12 +54,4 @@ export const mockArticles = [
     imageId: '5',
     createdAt: '01/03/16',
   },
-];
-
-export const mockImages = [
-  { imageId: '1', img: cat1 },
-  { imageId: '2', img: cat2 },
-  { imageId: '3', img: cat3 },
-  { imageId: '4', img: cat4 },
-  { imageId: '5', img: cat5 },
 ];
