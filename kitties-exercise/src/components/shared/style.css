@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 .main-content {
   height: 56px;
   padding: 4px 30px;
@@ -11,15 +12,23 @@
 .topnav {
   overflow: hidden;
 }
+.grey {
+  color: #6c757d;
+}
+
+.topnav-right {
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  color: #6c757d;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   margin: 2px 20px;
-  padding-top: 8px;
+  padding-top: 10px;
   line-height: 55px;
 }
 
@@ -30,5 +39,5 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  color: #212529;
+  color: #373c41;
 }

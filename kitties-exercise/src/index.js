@@ -17,7 +17,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<ListOfArticlesScreen />} />
-        {/* <Route path="/" element={<UploadArticleScreen />} /> */}
+        <Route path="uploadFile" element={<UploadArticleScreen />} />
       </Routes>
     </BrowserRouter>
   );
