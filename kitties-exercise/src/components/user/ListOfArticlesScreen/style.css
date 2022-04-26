@@ -1,9 +1,11 @@
+/* styles for main content */
 .main-container {
   display: flex;
   flex-direction: row;
   min-width: 400px;
 }
 
+/* styles for text content (right part) */
 .text-container {
   display: flex;
   flex-direction: column;
@@ -17,6 +19,8 @@
   margin-top: 0;
   margin-bottom: 16px;
 }
+
+/* styles for images (left part)*/
 .image {
   max-width: 272px;
   max-height: 244px;

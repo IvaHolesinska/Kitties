@@ -5,6 +5,7 @@ export const ApiCalls = () => {
   const [key, setKey] = useState('');
   const [token, setToken] = useState('');
 
+  // TODO: figure out better solution for gradual api calls
   useEffect(() => {
     // get api key
 
