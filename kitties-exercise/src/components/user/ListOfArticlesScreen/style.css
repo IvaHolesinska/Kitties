@@ -1,14 +1,24 @@
 .main-container {
   display: flex;
-  flex-direction: column;
-  width: 400px;
+  flex-direction: row;
+  min-width: 400px;
 }
 
 .text-container {
+  display: flex;
   flex-direction: column;
+  margin: 5px 20px;
+  max-width: 500px;
+  min-width: 250px;
+  padding-right: 10px;
 }
 
+.text-container p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
 .image {
-  width: 272px;
-  height: 244px;
+  max-width: 272px;
+  max-height: 244px;
+  margin: 20px;
 }

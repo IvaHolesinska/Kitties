@@ -1,5 +1,6 @@
 .form-container {
   margin: 30px;
+  min-width: 350px;
 }
 
 .title-container {
