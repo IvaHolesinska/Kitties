@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "outDir": "build",
+    "useDefineForClassFields": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUmdGlobalAccess": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    /* Linting */
+    "strict": true,
+    "pretty": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnreachableCode": false,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "downlevelIteration": true,
+    "noImplicitReturns": true,
+    /* Paths */
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@fixtures/*": ["fixtures/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@pages/*": ["pages/*"],
+      "@redux/*": ["redux/*"],
+      "@assets/*": ["assets/*"],
+      "@locales/*": ["locales/*"],
+      "@typings/*": ["typings/*"],
+      "@hocs/*": ["hocs/*"]
+    }
+  },
+  "include": ["vite.config.ts", "src/**/*", ".eslintrc.cjs", "tsconfig.node.json"],
+  "exclude": ["node_modules", "build", "jest"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "types": ["typePatches", "node", "webpack-env"]
+}
