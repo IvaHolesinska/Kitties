@@ -1,32 +1,6 @@
+import { RegisterResponse, LoginResponse, UploadImageResponse, Article } from '../types'
 import { createApi } from '@reduxjs/toolkit/query/react'
 import axios, { AxiosRequestConfig } from 'axios'
-
-interface RegisterResponse {
-  apiKey: string
-}
-
-interface LoginResponse {
-  access_token: string
-  expires_in: number
-}
-
-interface UploadImageResponse {
-  imageId: string
-}
-
-interface PostArticleResponse {
-  id: string
-  title: string
-  content: string
-  imageId: string
-  perex: string
-}
-
-interface ArticleData {
-  title: string
-  content: string
-  imageId: string
-}
 
 const axiosBaseQuery =
   ({ baseUrl }: { baseUrl: string }) =>
@@ -41,7 +15,7 @@ const axiosBaseQuery =
       })
       return { data: result.data }
     } catch (axiosError) {
-      let err = axiosError as any
+      const err = axiosError as any
       return {
         error: {
           status: err.response?.status,
@@ -101,13 +75,13 @@ export const apiSlice = createApi({
       },
       transformResponse: (response: UploadImageResponse[]) => response[0].imageId,
     }),
-    postArticle: builder.mutation<PostArticleResponse, { articleData: ArticleData; apiKey: string; token: string }>({
+    postArticle: builder.mutation<Article, { articleData: Article; apiKey: string; token: string }>({
       query: ({ articleData, apiKey, token }) => ({
         url: '/articles',
         method: 'POST',
         data: {
           ...articleData,
-          perex: articleData.content.substring(0, 100),
+          perex: articleData?.content?.substring(0, 100),
         },
         headers: {
           'Content-Type': 'application/json',

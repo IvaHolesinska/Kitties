@@ -1,12 +1,14 @@
-import { axiosMainUser } from '../../../constants/urls'
-import axios from 'axios'
+import { axiosMainUser } from '../../../src/constants/urls'
+import Spinner from '../../components/Spinner'
+import { Article } from '../../types'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const ArticleDetail = () => {
   const { id } = useParams()
-  const [article, setArticle] = useState(null)
-  const [imageUrl, setImageUrl] = useState(null)
+  const [article, setArticle] = useState<Article>({} as Article)
+  const [imageUrl, setImageUrl] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -37,19 +39,20 @@ const ArticleDetail = () => {
         }
       } catch (error) {
         console.error('Error fetching article content:', error)
+      } finally {
+        setLoading(false)
       }
     }
 
     fetchArticle()
   }, [id])
 
-  if (!article) {
-    return <div>Loading...</div>
+  if (!article || loading) {
+    return <Spinner />
   }
-  console.log('article  ', article)
   return (
     <div className="article-detail">
-      <img className="image" alt="img" src={imageUrl} />
+      {imageUrl && <img className="image" alt="img" src={imageUrl} />}
       <h1>{article.title}</h1>
       <p>{article.content}</p>
     </div>

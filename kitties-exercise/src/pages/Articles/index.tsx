@@ -1,4 +1,6 @@
+import Spinner from '../../components/Spinner'
 import { axiosMainUser } from '../../constants/urls'
+import { Article } from '../../types'
 import { ArticleContainer, ArticlesContainer, Image, TextContainer } from './styles'
 import { DateTime } from 'luxon'
 import React, { useEffect, useState } from 'react'
@@ -6,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Articles = () => {
   const [articles, setArticles] = useState([])
+  const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -33,7 +36,6 @@ const Articles = () => {
                   },
                   responseType: 'blob', // Important to fetch binary data as blob
                 })
-
                 const imageUrl = URL.createObjectURL(imageResponse.data)
                 return { ...article, imageUrl }
               }
@@ -48,6 +50,8 @@ const Articles = () => {
       } catch (error) {
         console.error('Error fetching articles:', error)
         setArticles([]) // Set to an empty array in case of error
+      } finally {
+        setLoading(false)
       }
     }
 
@@ -63,15 +67,15 @@ const Articles = () => {
       setZone: true,
     }).toFormat('dd. MM. yyyy HH:mm')
   }
-
   return (
     <ArticlesContainer>
       <h1>Articles</h1>
-
-      {articles.length > 0 ? (
-        articles.map((article) => {
+      {loading ? (
+        <Spinner />
+      ) : articles.length > 0 ? (
+        articles.map((article: Article, index: number) => {
           return (
-            <ArticleContainer key={article.id} onClick={() => handleArticleClick(article.articleId)}>
+            <ArticleContainer key={`${article.id}-${index}`} onClick={() => handleArticleClick(article.articleId)}>
               <Image alt="img" src={article.imageUrl} />
               <TextContainer>
                 <h4>{article.title}</h4>

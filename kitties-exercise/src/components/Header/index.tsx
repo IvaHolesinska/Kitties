@@ -1,4 +1,3 @@
-import './styles.ts'
 import { MainContent, Topnav, TopnavLink } from './styles.ts'
 import React from 'react'
 

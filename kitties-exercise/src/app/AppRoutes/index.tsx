@@ -30,7 +30,7 @@ const AppRoutes: FC = () => {
       ),
     },
     {
-      path: '/articles/:id',
+      path: '/recent-articles/:id',
       element: (
         <Layout>
           <ArticleDetail />
